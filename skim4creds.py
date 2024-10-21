@@ -3,7 +3,7 @@ import os
 from termcolor import colored
 
 # Keywords to search for in the files
-KEYWORDS = ["user", "password", "credential"]
+KEYWORDS = ["user:", "password:", "credential:","secret:","user=", "password=", "credential=","secret=", ]
 
 # Function to highlight keywords in a line
 def highlight_keywords(line, keyword):
@@ -64,9 +64,31 @@ def search_in_directory(root_directory):
             file_path = os.path.join(dirpath, filename)
             search_keywords_in_file(file_path)
 
+def printArt():
+    art = r"""
+
+  .-')  .-. .-')        _   .-')                      _  .-')    ('-. _ .-') _   .-')    
+ ( OO ).\  ( OO )      ( '.( OO )_                   ( \( -O ) _(  OO( (  OO) ) ( OO ).  
+(_)---\_,--. ,--. ,-.-'),--.   ,--.)  .---.    .-----.,------.(,------\     .'_(_)---\_) 
+/    _ ||  .'   / |  |OO|   `.'   |  / .  |   '  .--./|   /`. '|  .---,`'--..._/    _ |  
+\  :` `.|      /, |  |  |         | / /|  |   |  |('-.|  /  | ||  |   |  |  \  \  :` `.  
+ '..`''.|     ' _)|  |(_|  |'.'|  |/ / |  |_ /_) |OO  |  |_.' (|  '--.|  |   ' |'..`''.) 
+.-._)   |  .   \ ,|  |_.|  |   |  /  '-'    |||  |`-'||  .  '.'|  .--'|  |   / .-._)   \ 
+\       |  |\   (_|  |  |  |   |  `----|  |-(_'  '--'\|  |\  \ |  `---|  '--'  \       / 
+ `-----'`--' '--' `--'  `--'   `--'    `--'    `-----'`--' '--'`------`-------' `-----'  
+
+
+Author: Murray R
+                                              
+    """
+    print(art)
+
+
+
 # Main entry point
 if __name__ == "__main__":
     # Specify the directory to search in
+    printArt()
     directory_to_search = input("Enter the directory to search: ")
     if os.path.isdir(directory_to_search):
         search_in_directory(directory_to_search)
